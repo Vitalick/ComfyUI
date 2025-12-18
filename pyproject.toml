@@ -4,11 +4,85 @@ version = "0.3.76"
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.9"
+dependencies = [
+    "comfyui-frontend-package==1.33.13",
+    "comfyui-workflow-templates==0.7.54",
+    "comfyui-embedded-docs==0.3.1",
+    "torchsde",
+    "numpy>=1.25.0",
+    "einops",
+    "transformers>=4.50.3",
+    "tokenizers>=0.13.3",
+    "sentencepiece",
+    "safetensors>=0.4.2",
+    "aiohttp>=3.11.8",
+    "yarl>=1.18.0",
+    "pyyaml",
+    "Pillow",
+    "scipy",
+    "tqdm",
+    "psutil",
+    "alembic",
+    "SQLAlchemy",
+    "av>=14.2.0",
+    #non essential dependencies:
+    "kornia>=0.7.1",
+    "spandrel",
+    "pydantic~=2.0",
+    "pydantic-settings~=2.0",
+    "setuptools>=80.9.0",
+    "torch<2.8.0,>=2.7.0",
+    "torchvision",
+    "torchaudio",
+    "triton-windows<3.4",
+    ### optimizations
+    "flash-attn",
+    ### additional
+    "lpips",
+    "pywavelets",
+    "librosa",
+    "onnx",
+    "opencv-python",
+    "imageio",
+    "diffusers",
+    "lark",
+    "rotary-embedding-torch",
+    "matplotlib",
+    "ftfy",
+    "webcolors",
+    "mediapipe",
+    "scikit-image",
+    "omegaconf",
+    "accelerate",
+    "gguf",
+    "onnxruntime-gpu",
+]
 
 [project.urls]
 homepage = "https://www.comfy.org/"
 repository = "https://github.com/comfyanonymous/ComfyUI"
 documentation = "https://docs.comfy.org/"
+
+
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu128" },
+]
+torchvision = [
+    { index = "pytorch-cu128" },
+]
+xformers = [
+    { index = "pytorch-cu128" },
+]
+flash-attn = { path = "../flash_attn-2.7.4.post1+cu128torch2.7.0cxx11abiFALSE-cp312-cp312-win_amd64.whl" }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+
 
 [tool.ruff]
 lint.select = [
