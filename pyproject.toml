@@ -79,6 +79,9 @@ xformers = [
 ]
 flash-attn = { path = "../flash_attn-2.7.4.post1+cu128torch2.7.0cxx11abiFALSE-cp312-cp312-win_amd64.whl" }
 
+
+diffusers = { git = "https://github.com/huggingface/diffusers" }
+
 [[tool.uv.index]]
 name = "pytorch-cu128"
 url = "https://download.pytorch.org/whl/cu128"
