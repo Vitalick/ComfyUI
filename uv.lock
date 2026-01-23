@@ -587,7 +587,7 @@ wheels = [
 
 [[package]]
 name = "comfyui"
-version = "0.9.2"
+version = "0.10.0"
 source = { virtual = "." }
 dependencies = [
     { name = "accelerate" },
@@ -4497,8 +4497,8 @@ dependencies = [
     { name = "torch" },
 ]
 wheels = [
-    { url = "https://d21usjoq99fcb9.cloudfront.net/whl/cu128/xformers-0.0.31.post1-cp39-abi3-manylinux_2_28_x86_64.whl" },
-    { url = "https://d21usjoq99fcb9.cloudfront.net/whl/cu128/xformers-0.0.31.post1-cp39-abi3-win_amd64.whl" },
+    { url = "https://download.pytorch.org/whl/cu128/xformers-0.0.31.post1-cp39-abi3-manylinux_2_28_x86_64.whl" },
+    { url = "https://download.pytorch.org/whl/cu128/xformers-0.0.31.post1-cp39-abi3-win_amd64.whl" },
 ]
 
 [[package]]
