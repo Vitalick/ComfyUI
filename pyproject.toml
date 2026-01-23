@@ -61,6 +61,21 @@ dependencies = [
     "deepdiff>=8",
     "xformers",
     "nvidia-ml-py",
+    # crytools
+    "piexif",
+    "py-cpuinfo",
+    # supir
+    "pytorch_lightning",
+    "open-clip-torch",
+    # TTS Audio Suite
+    # Chatterbox
+    "s3tokenizer",
+    "cached-path",
+    "conformer",
+    # F5-TTS
+    "audio-separator",
+    "hydra-core",
+    "x-transformers",
 ]
 
 [project.urls]
@@ -81,6 +96,7 @@ xformers = [
     { index = "pytorch-cu128" },
 ]
 flash-attn = { path = "../flash_attn-2.7.4.post1+cu128torch2.7.0cxx11abiFALSE-cp312-cp312-win_amd64.whl" }
+#flash-attn = { path = "../flash_attn-2.8.3+cu12torch2.9cxx11abiTRUE-cp312-cp312-linux_x86_64.whl" }
 
 
 diffusers = { git = "https://github.com/huggingface/diffusers" }
@@ -94,15 +110,15 @@ explicit = true
 
 [tool.ruff]
 lint.select = [
-  "N805", # invalid-first-argument-name-for-method
-  "S307", # suspicious-eval-usage
-  "S102", # exec
-  "E",
-  "T",    # print-usage
-  "W",
-  # The "F" series in Ruff stands for "Pyflakes" rules, which catch various Python syntax errors and undefined names.
-  # See all rules here: https://docs.astral.sh/ruff/rules/#pyflakes-f
-  "F",
+    "N805", # invalid-first-argument-name-for-method
+    "S307", # suspicious-eval-usage
+    "S102", # exec
+    "E",
+    "T", # print-usage
+    "W",
+    # The "F" series in Ruff stands for "Pyflakes" rules, which catch various Python syntax errors and undefined names.
+    # See all rules here: https://docs.astral.sh/ruff/rules/#pyflakes-f
+    "F",
 ]
 
 lint.ignore = ["E501", "E722", "E731", "E712", "E402", "E741"]
@@ -112,46 +128,46 @@ exclude = ["*.ipynb", "**/generated/*.pyi"]
 [tool.pylint]
 master.py-version = "3.10"
 master.extension-pkg-allow-list = [
-  "pydantic",
+    "pydantic",
 ]
 reports.output-format = "colorized"
 similarities.ignore-imports = "yes"
 messages_control.disable = [
-  "missing-module-docstring",
-  "missing-class-docstring",
-  "missing-function-docstring",
-  "line-too-long",
-  "too-few-public-methods",
-  "too-many-public-methods",
-  "too-many-instance-attributes",
-  "too-many-positional-arguments",
-  "broad-exception-raised",
-  "too-many-lines",
-  "invalid-name",
-  "unused-argument",
-  "broad-exception-caught",
-  "consider-using-with",
-  "fixme",
-  "too-many-statements",
-  "too-many-branches",
-  "too-many-locals",
-  "too-many-arguments",
-  "too-many-return-statements",
-  "too-many-nested-blocks",
-  "duplicate-code",
-  "abstract-method",
-  "superfluous-parens",
-  "arguments-differ",
-  "redefined-builtin",
-  "unnecessary-lambda",
-  "dangerous-default-value",
-  "invalid-overridden-method",
-  # next warnings should be fixed in future
-  "bad-classmethod-argument",  # Class method should have 'cls' as first argument
-  "wrong-import-order",  # Standard imports should be placed before third party imports
-  "ungrouped-imports",
-  "unnecessary-pass",
-  "unnecessary-lambda-assignment",
-  "no-else-return",
-  "unused-variable",
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "line-too-long",
+    "too-few-public-methods",
+    "too-many-public-methods",
+    "too-many-instance-attributes",
+    "too-many-positional-arguments",
+    "broad-exception-raised",
+    "too-many-lines",
+    "invalid-name",
+    "unused-argument",
+    "broad-exception-caught",
+    "consider-using-with",
+    "fixme",
+    "too-many-statements",
+    "too-many-branches",
+    "too-many-locals",
+    "too-many-arguments",
+    "too-many-return-statements",
+    "too-many-nested-blocks",
+    "duplicate-code",
+    "abstract-method",
+    "superfluous-parens",
+    "arguments-differ",
+    "redefined-builtin",
+    "unnecessary-lambda",
+    "dangerous-default-value",
+    "invalid-overridden-method",
+    # next warnings should be fixed in future
+    "bad-classmethod-argument", # Class method should have 'cls' as first argument
+    "wrong-import-order", # Standard imports should be placed before third party imports
+    "ungrouped-imports",
+    "unnecessary-pass",
+    "unnecessary-lambda-assignment",
+    "no-else-return",
+    "unused-variable",
 ]
