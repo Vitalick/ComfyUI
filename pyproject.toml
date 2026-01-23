@@ -42,6 +42,7 @@ dependencies = [
     "lpips",
     "pywavelets",
     "librosa",
+    "numba>=0.63.0", # for librosa
     "onnx",
     "opencv-python",
     "imageio",
@@ -58,6 +59,8 @@ dependencies = [
     "gguf",
     "onnxruntime-gpu",
     "deepdiff>=8",
+    "xformers",
+    "nvidia-ml-py",
 ]
 
 [project.urls]
