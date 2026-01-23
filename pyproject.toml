@@ -32,7 +32,7 @@ dependencies = [
     "pydantic~=2.0",
     "pydantic-settings~=2.0",
     "setuptools>=80.9.0",
-    "torch<2.8.0,>=2.7.0",
+    "torch<2.10.0,>=2.9.0",
     "torchvision",
     "torchaudio",
     "triton-windows<3.4",
@@ -87,22 +87,27 @@ documentation = "https://docs.comfy.org/"
 
 [tool.uv.sources]
 torch = [
-    { index = "pytorch-cu128" },
+    { index = "pytorch-cu130" },
 ]
 torchvision = [
-    { index = "pytorch-cu128" },
+    { index = "pytorch-cu130" },
 ]
 xformers = [
-    { index = "pytorch-cu128" },
+    { index = "pytorch-cu130" },
 ]
-flash-attn = { path = "../flash_attn-2.7.4.post1+cu128torch2.7.0cxx11abiFALSE-cp312-cp312-win_amd64.whl" }
-#flash-attn = { path = "../flash_attn-2.8.3+cu12torch2.9cxx11abiTRUE-cp312-cp312-linux_x86_64.whl" }
+#flash-attn = { path = "../flash_attn-2.7.4.post1+cu128torch2.7.0cxx11abiFALSE-cp312-cp312-win_amd64.whl" }
+flash-attn = { path = "../flash_attn-2.8.3+cu130torch2.9.1cxx11abiTRUE-cp312-cp312-win_amd64.whl" }
 
 
 diffusers = { git = "https://github.com/huggingface/diffusers" }
 
+#[[tool.uv.index]]
+#name = "pytorch-cu128"
+#url = "https://download.pytorch.org/whl/cu128"
+#explicit = true
+
 [[tool.uv.index]]
-name = "pytorch-cu128"
+name = "pytorch-cu130"
 url = "https://download.pytorch.org/whl/cu128"
 explicit = true
 
