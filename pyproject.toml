@@ -76,6 +76,8 @@ dependencies = [
     "audio-separator",
     "hydra-core",
     "x-transformers",
+    "jieba",
+    "pypinyin",
 ]
 
 [project.urls]
