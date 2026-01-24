@@ -3,7 +3,7 @@ name = "ComfyUI"
 version = "0.10.0"
 readme = "README.md"
 license = { file = "LICENSE" }
-requires-python = ">=3.10"
+requires-python = ">=3.10,<3.13"
 dependencies = [
     "comfyui-frontend-package==1.37.11",
     "comfyui-workflow-templates==0.8.15",
@@ -38,7 +38,9 @@ dependencies = [
     "triton-windows<3.4",
     ### optimizations
     "flash-attn",
+#    "sageattention",
     ### additional
+    "hf_xet",
     "lpips",
     "pywavelets",
     "librosa",
@@ -67,17 +69,32 @@ dependencies = [
     # supir
     "pytorch_lightning",
     "open-clip-torch",
-    # TTS Audio Suite
-    # Chatterbox
-    "s3tokenizer",
-    "cached-path",
-    "conformer",
-    # F5-TTS
-    "audio-separator",
-    "hydra-core",
-    "x-transformers",
-    "jieba",
-    "pypinyin",
+    "color-matcher",
+
+    # qwen-tts
+    "qwen-tts",
+
+#    # TTS Audio Suite
+#    # Chatterbox
+#    "s3tokenizer",
+#    "cached-path",
+#    "conformer",
+#    # F5-TTS
+#    "audio-separator",
+#    "hydra-core",
+#    "x-transformers",
+#    "jieba",
+#    "pypinyin",
+#    "torchdiffeq",
+#    "ema_pytorch",
+#    "datasets",
+#    # Higgs Audio 2
+##    "descript-audio-codec",
+#    "vector-quantize-pytorch",
+#    "dacite",
+#    # RVC Voice Conversion
+#    "faiss-cpu",
+#    "torchcrepe",
 ]
 
 [project.urls]
@@ -99,6 +116,7 @@ xformers = [
 ]
 #flash-attn = { path = "../flash_attn-2.7.4.post1+cu128torch2.7.0cxx11abiFALSE-cp312-cp312-win_amd64.whl" }
 flash-attn = { path = "../flash_attn-2.8.3+cu130torch2.9.1cxx11abiTRUE-cp312-cp312-win_amd64.whl" }
+#sageattention = { path = "../sageattention-2.2.0+cu130torch2.9.1cxx11abitrue-cp312-cp312-win_amd64.whl" }
 
 
 diffusers = { git = "https://github.com/huggingface/diffusers" }
