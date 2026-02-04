@@ -444,6 +444,10 @@ def detect_unet_config(state_dict, key_prefix, metadata=None):
             dit_config["ffn_dim_multiplier"] = (8.0 / 3.0)
             dit_config["z_image_modulation"] = True
             dit_config["time_scale"] = 1000.0
+            try:
+                dit_config["allow_fp16"] = torch.std(state_dict['{}layers.{}.ffn_norm1.weight'.format(key_prefix, dit_config["n_layers"] - 2)], unbiased=False).item() < 0.42
+            except Exception:
+                pass
             if '{}cap_pad_token'.format(key_prefix) in state_dict_keys:
                 dit_config["pad_tokens_multiple"] = 32
             sig_weight = state_dict.get('{}siglip_embedder.0.weight'.format(key_prefix), None)
@@ -649,6 +653,11 @@ def detect_unet_config(state_dict, key_prefix, metadata=None):
         dit_config["visual_embed_dim"] = state_dict['{}visual_embeddings.in_layer.weight'.format(key_prefix)].shape[1]
         dit_config["num_text_blocks"] = count_blocks(state_dict_keys, '{}text_transformer_blocks.'.format(key_prefix) + '{}.')
         dit_config["num_visual_blocks"] = count_blocks(state_dict_keys, '{}visual_transformer_blocks.'.format(key_prefix) + '{}.')
+        return dit_config
+
+    if '{}encoder.lyric_encoder.layers.0.input_layernorm.weight'.format(key_prefix) in state_dict_keys:
+        dit_config = {}
+        dit_config["audio_model"] = "ace1.5"
         return dit_config
 
     if '{}input_blocks.0.0.weight'.format(key_prefix) not in state_dict_keys:
