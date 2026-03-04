@@ -39,7 +39,7 @@ dependencies = [
     "triton-windows<3.4",
     ### optimizations
     "flash-attn",
-#    "sageattention",
+    #    "sageattention",
     ### additional
     "hf_xet",
     "lpips",
@@ -71,31 +71,29 @@ dependencies = [
     "pytorch_lightning",
     "open-clip-torch",
     "color-matcher",
-
     # qwen-tts
     "qwen-tts",
-
-#    # TTS Audio Suite
-#    # Chatterbox
-#    "s3tokenizer",
-#    "cached-path",
-#    "conformer",
-#    # F5-TTS
-#    "audio-separator",
-#    "hydra-core",
-#    "x-transformers",
-#    "jieba",
-#    "pypinyin",
-#    "torchdiffeq",
-#    "ema_pytorch",
-#    "datasets",
-#    # Higgs Audio 2
-##    "descript-audio-codec",
-#    "vector-quantize-pytorch",
-#    "dacite",
-#    # RVC Voice Conversion
-#    "faiss-cpu",
-#    "torchcrepe",
+    #    # TTS Audio Suite
+    #    # Chatterbox
+    #    "s3tokenizer",
+    #    "cached-path",
+    #    "conformer",
+    #    # F5-TTS
+    #    "audio-separator",
+    #    "hydra-core",
+    #    "x-transformers",
+    #    "jieba",
+    #    "pypinyin",
+    #    "torchdiffeq",
+    #    "ema_pytorch",
+    #    "datasets",
+    #    # Higgs Audio 2
+    ##    "descript-audio-codec",
+    #    "vector-quantize-pytorch",
+    #    "dacite",
+    #    # RVC Voice Conversion
+    #    "faiss-cpu",
+    #    "torchcrepe",
 ]
 
 [project.urls]
