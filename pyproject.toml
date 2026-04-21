@@ -6,7 +6,7 @@ license = { file = "LICENSE" }
 requires-python = ">=3.10,<3.13"
 dependencies = [
     "comfyui-frontend-package==1.42.8",
-    "comfyui-workflow-templates==0.9.36",
+    "comfyui-workflow-templates==0.9.44",
     "comfyui-embedded-docs==0.4.3",
     "comfy-kitchen>=0.2.8",
     "comfy-aimdo>=0.2.12",
@@ -20,7 +20,7 @@ dependencies = [
     "aiohttp>=3.11.8",
     "yarl>=1.18.0",
     "pyyaml",
-    "pillow",
+    "pillow>12.1",
     "scipy",
     "tqdm",
     "psutil",
@@ -43,6 +43,8 @@ dependencies = [
     "torchvision",
     "torchaudio",
     "triton-windows<3.4",
+    ### comfyui manager
+    "GitPython",
     ### optimizations
     "flash-attn",
     #    "sageattention",
