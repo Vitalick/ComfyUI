@@ -3,7 +3,7 @@ name = "ComfyUI"
 version = "0.19.3"
 readme = "README.md"
 license = { file = "LICENSE" }
-requires-python = ">=3.10,<3.13"
+requires-python = ">=3.12,<3.13"
 dependencies = [
     "comfyui-frontend-package==1.42.12",
     "comfyui-workflow-templates==0.9.57",
@@ -39,15 +39,17 @@ dependencies = [
     "pydantic~=2.0",
     "pydantic-settings~=2.0",
     "setuptools>=80.9.0",
-    "torch>=2.9.0,<2.10.0",
+#    "torch>=2.9.0,<2.10.0",
+    "torch",
     "torchvision",
     "torchaudio",
-    "triton-windows<3.4",
+    #    "triton-windows<3.4",
+    "triton",
     ### comfyui manager
     "GitPython",
     ### optimizations
     "flash-attn",
-    #    "sageattention",
+    "sageattention",
     ### additional
     "hf_xet",
     "lpips",
@@ -113,30 +115,39 @@ documentation = "https://docs.comfy.org/"
 
 [tool.uv.sources]
 torch = [
-    { index = "pytorch-cu130" },
+    { index = "pytorch-cu128" },
 ]
 torchvision = [
-    { index = "pytorch-cu130" },
+    { index = "pytorch-cu128" },
 ]
 xformers = [
-    { index = "pytorch-cu130" },
+    { index = "pytorch-cu128" },
 ]
+
+[tool.uv.extra-build-dependencies]
+flash-attn = ["torch"]
+
 #flash-attn = { path = "../flash_attn-2.7.4.post1+cu128torch2.7.0cxx11abiFALSE-cp312-cp312-win_amd64.whl" }
-flash-attn = { path = "../flash_attn-2.8.3+cu130torch2.9.1cxx11abiTRUE-cp312-cp312-win_amd64.whl" }
+#flash-attn = { path = "../flash_attn-2.8.3+cu130torch2.9.1cxx11abiTRUE-cp312-cp312-win_amd64.whl" }
 #sageattention = { path = "../sageattention-2.2.0+cu130torch2.9.1cxx11abitrue-cp312-cp312-win_amd64.whl" }
 
 
-diffusers = { git = "https://github.com/huggingface/diffusers" }
-
-#[[tool.uv.index]]
-#name = "pytorch-cu128"
-#url = "https://download.pytorch.org/whl/cu128"
-#explicit = true
+#diffusers = { git = "https://github.com/huggingface/diffusers" }
 
 [[tool.uv.index]]
-name = "pytorch-cu130"
-url = "https://download.pytorch.org/whl/cu130"
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
 explicit = true
+
+#[[tool.uv.index]]
+#name = "pytorch-cu130"
+#url = "https://download.pytorch.org/whl/cu130"
+#explicit = true
+
+#[[tool.uv.index]]
+#name = "pytorch-cu131"
+#url = "https://download.pytorch.org/whl/cu131"
+#explicit = true
 
 
 
