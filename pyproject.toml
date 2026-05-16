@@ -40,9 +40,9 @@ dependencies = [
     "pydantic-settings~=2.0",
     "setuptools>=80.9.0",
 #    "torch>=2.9.0,<2.10.0",
-    "torch",
+    "torch==2.10.0",
     "torchvision",
-    "torchaudio",
+    "torchaudio==2.10.0",
     #    "triton-windows<3.4",
     "triton",
     ### comfyui manager
@@ -118,6 +118,9 @@ torch = [
     { index = "pytorch-cu128" },
 ]
 torchvision = [
+    { index = "pytorch-cu128" },
+]
+torchaudio = [
     { index = "pytorch-cu128" },
 ]
 xformers = [
